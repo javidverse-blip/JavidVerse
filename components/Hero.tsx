@@ -12,16 +12,24 @@ interface HeroProps {
 export default function Hero({ title, subtitle }: HeroProps) {
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-primary">
+      {/* Hero Image Background */}
+      <Image
+        src="/hero-image.jpg"
+        alt="Hero background"
+        fill
+        className="object-cover object-center absolute inset-0 w-full h-full z-0"
+        priority
+      />
       <div className="border-t border-primary/20"></div>
       {/* Dark overlay */}
-      <div className="absolute inset-0 overlay-primary"></div>
+      <div className="absolute inset-0 overlay-primary z-10"></div>
 
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-12 max-w-5xl"
+        className="relative z-20 flex flex-col items-center justify-center text-center px-6 py-12 max-w-5xl"
       >
         {/* Logo Container */}
         <motion.div
@@ -30,15 +38,16 @@ export default function Hero({ title, subtitle }: HeroProps) {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mb-6 flex justify-center"
         >
-          <div className="bg-white rounded-full p-4 shadow-lg">
-            <div className="rounded-full border-4 border-white">
-              <Image
-                src="/short-logo.png"
-                alt="JavidVerse"
-                width={70}
-                height={70}
-              />
-            </div>
+          <div className="relative flex items-center justify-center">
+            {/* Softer, more opaque blurred white background */}
+            <span className="absolute inset-0 rounded-full bg-white opacity-90 blur-lg shadow-[0_0_16px_8px_rgba(255,255,255,0.4)]"></span>
+            <Image
+              src="/Short-logo.png"
+              alt="JavidVerse"
+              width={70}
+              height={70}
+              className="relative z-10"
+            />
           </div>
         </motion.div>
 
