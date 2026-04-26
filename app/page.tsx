@@ -73,17 +73,15 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-<div className="py-5">
-  <SectionWrapper
-    title="Contact"
-    subtitle="Send a brief note and we’ll connect within one business day."
-    className="bg-gray-50"
-  >
-    <div className="rounded-xl border-2 border-primary bg-light p-8 shadow-premium sm:p-10">
-      <ContactForm />
-    </div>
-  </SectionWrapper>
-</div>
+      <SectionWrapper
+        title="Contact"
+        subtitle="Send a brief note and we’ll connect within one business day."
+        className="bg-gray-50"
+      >
+        <div className="rounded-xl border-2 border-primary bg-light p-8 shadow-premium sm:p-10">
+          <ContactForm />
+        </div>
+      </SectionWrapper>
     </>
   );
 }

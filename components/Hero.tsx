@@ -11,14 +11,10 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle }: HeroProps) {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-image.jpg')" }}
-      ></div>
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-primary">
+      <div className="border-t border-primary/20"></div>
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#052d6d]/60"></div>
+      <div className="absolute inset-0 overlay-primary"></div>
 
       {/* Content */}
       <motion.div
@@ -34,10 +30,10 @@ export default function Hero({ title, subtitle }: HeroProps) {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mb-6 flex justify-center"
         >
-          <div className="bg-white rounded-full p-2 shadow-lg">
-            <div className="rounded-full border border-white">
+          <div className="bg-white rounded-full p-4 shadow-lg">
+            <div className="rounded-full border-4 border-white">
               <Image
-                src="/Short-logo.png"
+                src="/short-logo.png"
                 alt="JavidVerse"
                 width={70}
                 height={70}
